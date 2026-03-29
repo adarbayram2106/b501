@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sihirli Çiçek Bahçesi</title>
+    <meta name="description" content="Ekranda canlanan, büyülü ve zarif bir çiçek deneyimi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- AURORA ARKAPLAN -->
+    <div class="aurora">
+        <div class="aurora-blob"></div>
+        <div class="aurora-blob"></div>
+        <div class="aurora-blob"></div>
+    </div>
+
+    <!-- UÇUŞAN YAPRAK BG -->
+    <div class="bg-petals" id="bg-petals"></div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- SORU EKRANI                                 -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="quiz-screen" id="quiz-screen">
+        <div class="quiz-card">
+            <div class="quiz-icon">🌸</div>
+            <h2 class="quiz-title">Hadi bir soru!</h2>
+            <p class="quiz-question">En sevdiğin oda arkadaşın kim?</p>
+
+            <div class="quiz-input-wrap">
+                <input
+                    type="text"
+                    id="quiz-input"
+                    class="quiz-input"
+                    placeholder="Cevabını yaz..."
+                    autocomplete="off"
+                    spellcheck="false"
+                />
+                <button id="quiz-btn" class="btn quiz-submit-btn">Söyle! 💬</button>
+            </div>
+
+            <p class="quiz-hint" id="quiz-hint"></p>
+            <div class="wrong-shake" id="wrong-emoji"></div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- ANA İÇERİK                                  -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="main-content" id="main-content" style="display:none;">
+        <div class="container">
+            <header>
+                <div class="badge">✨ Dijital Bahçe</div>
+                <h1>Sihirli Çiçek</h1>
+                <p>Zarafetin ve doğanın dijital dansı</p>
+            </header>
+
+            <!-- DAHLIA ÇİÇEK (3 Katman) -->
+            <div class="flower-stage">
+                <div class="fancy-flower" id="fancy-flower">
+
+                    <!-- KATMAN A: 12 dış yaprak — mor/eflatun -->
+                    <div class="petal-layer layer-a">
+                        <div class="fp la la1"></div><div class="fp la la2"></div>
+                        <div class="fp la la3"></div><div class="fp la la4"></div>
+                        <div class="fp la la5"></div><div class="fp la la6"></div>
+                        <div class="fp la la7"></div><div class="fp la la8"></div>
+                        <div class="fp la la9"></div><div class="fp la la10"></div>
+                        <div class="fp la la11"></div><div class="fp la la12"></div>
+                    </div>
+
+                    <!-- KATMAN B: 9 orta yaprak — pembe/magenta -->
+                    <div class="petal-layer layer-b">
+                        <div class="fp lb lb1"></div><div class="fp lb lb2"></div>
+                        <div class="fp lb lb3"></div><div class="fp lb lb4"></div>
+                        <div class="fp lb lb5"></div><div class="fp lb lb6"></div>
+                        <div class="fp lb lb7"></div><div class="fp lb lb8"></div>
+                        <div class="fp lb lb9"></div>
+                    </div>
+
+                    <!-- KATMAN C: 6 iç yaprak — şeftali/kırmızı -->
+                    <div class="petal-layer layer-c">
+                        <div class="fp lc lc1"></div><div class="fp lc lc2"></div>
+                        <div class="fp lc lc3"></div><div class="fp lc lc4"></div>
+                        <div class="fp lc lc5"></div><div class="fp lc lc6"></div>
+                    </div>
+
+                    <!-- MERKEZ -->
+                    <div class="fc-center"><div class="fc-inner"></div></div>
+
+                    <!-- Parlayan halkalar -->
+                    <div class="glow-ring gr-1"></div>
+                    <div class="glow-ring gr-2"></div>
+                    <div class="glow-ring gr-3"></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="bloom-btn" class="btn">🌸 Çiçeği Açtır</button>
+                <button id="reset-btn" class="btn secondary">↺ Yenile</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- FOTOĞRAF & MÜZİK OVERLAY                   -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="photo-overlay" id="photo-overlay">
+        <div class="photo-card">
+            <div class="card-glow-bar"></div>
+            <img src="foto.jpg" alt="Sizin Fotoğrafınız" id="surprise-photo">
+            <h2 class="surprise-msg">Dünyadaki en güzel çiçekler sizsiniz! ✨</h2>
+            <p class="surprise-sub">Doğanın en büyülü armağanı sizsiniz 🌸</p>
+            <button id="close-overlay" class="btn secondary" style="margin-top: 1.5rem;">Kapat ✕</button>
+        </div>
+    </div>
+
+    <!-- MÜZİK -->
+    <audio id="bg-music" loop>
+        <source src="sarki.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- YANLIŞ CEVAP SESİ -->
+    <audio id="wrong-audio">
+        <source src="yanlis.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="particles" id="particles"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
